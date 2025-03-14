@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Presentation Timer</title>
+        <link href="./style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            <div id="timercontainer">
+                <div id="timer">15 minutes</div>
+            </div>
+            <div id="controls">
+                <input id="time"></input>
+                <button id="submittime">Change time</button>
+                <button id="start">Start/Stop</button>
+                <span id="secondcount"></div>
+            </div>
+        </div>
+    </body>
+    <script>
+        let timer = document.getElementById("timer");
+        let timeinput = document.getElementById("time");
+        let timesubmit = document.getElementById("submittime");
+        let start = document.getElementById("start");
+        let hide = document.getElementById("hide");
+        let controls = document.getElementById("controls");
+        let seconds = document.getElementById("secondcount");
+
+        var timerseconds = 15 * 60;
+        var timerstate = "stopped";
+        setInterval(() => {
+            if(timerstate == "started") {
+                timerseconds -= 1;
+            }
+
+            var minutes = Math.floor(timerseconds / 60) + 1;
+            if(minutes != 1) {
+                var noun = "minutes";
+            } else {
+                var noun = "minute";
+            }
+
+            timer.innerHTML = `${minutes} ${noun}`;
+            seconds.innerHTML = timerseconds;
+        }, 1000);
+
+        function toggleTimer() {
+            if(timerstate == "started") {
+                timerstate = "stopped";
+            } else {
+                timerstate = "started";
+            }
+        }
+
+        function setclock(minutes) {
+            timerseconds = Number(minutes) * 60;
+        }
+
+        function toggleBarVis() {
+            if(controls.style.display == "block") {
+                controls.style.display = "none";
+            } else {
+                controls.style.display = "block";
+            }
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if(event.key == "h") {
+                toggleBarVis();
+            }
+        });
+        start.addEventListener('click', function(event) { toggleTimer(); });
+        timesubmit.addEventListener('click', function(event) {
+            setclock(parseInt(timeinput.value));
+        });
+
+    </script>
+</html>
