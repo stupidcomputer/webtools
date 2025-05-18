@@ -1,0 +1,39 @@
+body {
+    height: 100vh;
+    margin: 0px;
+}
+
+#maincontrols {
+    border-bottom: 5px black dashed;
+    width: 100%;
+}
+
+#vizcontainer {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.datecolumn {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    border: 2px dotted black;
+    padding: 15px;
+}
+
+.box {
+    width: 25px;
+    height: 25px;
+    border: 4px black solid;
+}
+
+.box-filled {
+    background-color: green;
+}
+
+.box-unfilled {
+    background-color: red;
+}
