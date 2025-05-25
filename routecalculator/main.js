@@ -231,7 +231,7 @@ function renderEntriesToId(routes) {
 
                 switch(attr) {
                     case "numflags":
-                        if(parseInt(entry[attr]) > 1) cell.style.backgroundColor = "#ff0000";
+                        if(parseInt(entry[attr]) > 1) cell.classList.add("attention");
                         /* fallthrough */
                     case "housenumber":
                         content = stripTrailingDecimal(content);

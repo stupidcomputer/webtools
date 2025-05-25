@@ -2,6 +2,13 @@
     .page, .page-break { break-after: page; }
 
     #maincontrols { display: none; }
+
+    * {
+        /* allow background colors in print output */
+        color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
 } 
 
 @media screen {
@@ -88,4 +95,8 @@ thead {
 
 table tr.routeRow:hover {
     background-color: rgb(182, 179, 179);
+}
+
+.attention {
+    background-color: red;
 }
