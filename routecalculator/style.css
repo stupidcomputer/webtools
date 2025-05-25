@@ -1,0 +1,91 @@
+@media print {
+    .page, .page-break { break-after: page; }
+
+    #maincontrols { display: none; }
+} 
+
+@media screen {
+    html, body {
+        width: 100vw;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    #maincontrols {
+        border: 5px black dashed;
+        position: fixed;
+        padding: 10px;
+        right: 10px;
+        top: 10px;
+        height: 90dvh;
+        background-color: white;
+        width: 35em;
+        overflow-y: scroll;
+    }
+}
+
+#recordview {
+    display: none;
+}
+
+#output {
+    padding: 5px;
+}
+
+body {
+    font-family: sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+table {
+    border: 3px solid black;
+    border-collapse: collapse;
+
+}
+
+td {
+    border: 2px dotted gray;
+    padding: 2px;
+    vertical-align: top;
+}
+
+td.comments {
+    width: 100%;
+}
+
+table.routetable td:nth-child(1), table.routetable td:nth-child(2) { display: none; }
+
+td.housenumber {
+    text-align: right;
+}
+
+td.firstname, td.lastname, td.street {
+    text-wrap: nowrap;
+}
+
+thead {
+    font-style: italic;
+    border-bottom: 3px solid black;
+}
+
+#directionInputContainer {
+    display: none;
+}
+
+#directionInput {
+    width: 100%;
+    height: 6em;
+}
+
+#assignmentstable {
+    width: 100%;
+}
+
+.routeassignmentfield {
+    width: 95%;
+}
+
+table tr.routeRow:hover {
+    background-color: rgb(182, 179, 179);
+}

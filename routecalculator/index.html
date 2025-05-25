@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flag Program Route Calculator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="maincontrols">
+            <div id="mainpage">
+                <ol>
+                    <li>
+                        Upload your CSV file here:
+                        <input type="file" id="fileinput" />
+                    </li>
+                    <li>Tweak route assignments using the table below</li>
+                    <li>Press CTRL+[ to hide/unhide this window</li>
+                    <li>Press CTRL+P to print the final version</li>
+                </ol>
+                <div id="routeassignments">
+                </div>
+                <div id="directionInputContainer">
+                    <h2>Route directions</h2>
+                    <p>
+                        Type your route directions here.
+                        You may use <a href="https://www.markdownguide.org/">Markdown</a> to perform rich-text formatting.
+                    </p>
+                    <textarea id="directionInput">
+Hey there! Thanks for volunteering for the flag program. Here's some important things you ought to know.
+
+1.
+                    </textarea>
+                </div>
+            </div>
+            <div id="recordview">
+                <button id="backtomainview">Go back to the main view</button>
+                <h1 id="addressview"></h1>
+                <ul>
+                    <li><span id="peoplename"></span></li>
+                    <li><a id="routename"></a></li>
+                    <li><a id="viewintrackvia">View this record in TrackVia</a></li>
+                    <li><a id="viewongooglemaps">View this address on Google Maps</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="output"></div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="./main.js"></script>
+</html>
