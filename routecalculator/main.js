@@ -129,6 +129,11 @@ function rowonclickHandler(routes, e) {
     const mainpage = g("mainpage");
 
     const addressview = g("addressview");
+    const neighborhoodname = g("neighborhoodname");
+    const mailingaddrname = g("mailingaddrname");
+    const emailaddrname = g("emailaddrname");
+    const phone = g("phonename");
+    const numberofflags = g("numberofflags");
     const peoplename = g("peoplename");
     const routename = g("routename");
     const trackvia = g("viewintrackvia");
@@ -142,6 +147,13 @@ function rowonclickHandler(routes, e) {
     record = routes[group].find(obj => obj["id"] == id);
     addressview.innerHTML = record["fulladdr"];
     peoplename.innerHTML = record["fullname"];
+    neighborhoodname.innerHTML = record["neighborhood"];
+    mailingaddrname.innerHTML = record["mailingaddr"];
+    emailaddrname.innerHTML = record["emailaddr"];
+    emailaddrname.href = "mailto:".concat(record["emailaddr"]);
+    phone.innerHTML = record["phone"];
+    phone.href = "tel:".concat(record["phone"]);
+    numberofflags.innerHTML = stripTrailingDecimal(record["numflags"]);
     routename.innerHTML = record["group"];
     routename.href = `#${record["group"].replace(' ', '_')}`;
     trackvia.href = `https://go.trackvia.com/#/apps/4/tables/23/views/28/records/view/${record["id"]}/form/51`;

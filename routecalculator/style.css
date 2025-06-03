@@ -2,6 +2,7 @@
     .page, .page-break { break-after: page; }
 
     #maincontrols { display: none; }
+    #recordview { display: none; }
 
     * {
         /* allow background colors in print output */
