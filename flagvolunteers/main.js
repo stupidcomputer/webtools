@@ -83,6 +83,16 @@ function processContents(contents) {
     return dates;
 }
 
+function handleNameClick(e) {
+    var name = this.innerHTML;
+
+    navigator.clipboard.writeText(name).then(function() {
+        console.log('copied to clipboard');
+    }, function(err) { 
+        console.error('couldn\'t copy: ', err);
+    });
+}
+
 function dateSelector(e) {
     var data = window.routedata[this.innerHTML];
     var container = document.getElementById("vizcontainer");
@@ -93,19 +103,25 @@ function dateSelector(e) {
         routecontainer.className = "datecolumn";
 
         var title = document.createElement("p");
-        title.innerHTML = `<b>${route}`;
+        title.innerHTML = `<b>${route}</b>`;
         routecontainer.appendChild(title);
 
         for(let i = 0; i < routedata.length; i++) {
             var current = routedata[i];
             console.log(current);
             var newitem = document.createElement("div");
-            if(slotUnfilled(current)) {
-                newitem.className = "box box-unfilled";
-                console.log("unfilled");
+            if(!window.showNames) {
+                if(slotUnfilled(current)) {
+                    newitem.className = "box box-unfilled";
+                    console.log("unfilled");
+                } else {
+                    newitem.className = "box box-filled";
+                    console.log("filled");
+                }
             } else {
-                newitem.className = "box box-filled";
-                console.log("filled");
+                newitem.innerHTML = current["first"] + " " + current["last"];
+                newitem.addEventListener('click', handleNameClick, false);
+                newitem.className = "boxedname";
             }
             routecontainer.appendChild(newitem);
         }
@@ -126,6 +142,7 @@ function generateDateChoices(data) {
         dates.appendChild(elem);
     }
     document.getElementById("nodates").style.display = "none";
+    document.getElementById("toggleshow").style.display = "block";
 }
 
 function readFile(e) {
@@ -137,7 +154,18 @@ function readFile(e) {
         var contents = e.target.result;
         window.routedata = processContents(contents);
         generateDateChoices(window.routedata);
+        window.showNames = false;
     }
     reader.readAsText(file);
 }
+
 document.getElementById("fileinput").addEventListener('change', readFile, false);
+document.getElementById("toggleshow").addEventListener('click', (e) => {
+    if(window.showNames) {
+        window.showNames = false;
+        e.target.innerHTML = "Generating icons";
+    } else {
+        window.showNames = true;
+        e.target.innerHTML = "Generating names";
+    }
+});
