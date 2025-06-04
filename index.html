@@ -2,18 +2,53 @@
 <html>
     <head>
         <title>Welcome to tools.beepboop.systems</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
     </head>
+    <style>
+        body { background-image: url("workbench.png"); }
+    </style>
     <body>
         <article>
-            <h1>tools.beepboop.systems</h1>
+            <div id="fancydiv">
+                <h1>Welcome to tools.beepboop.systems!</h1>
+                <p>
+                    <i>a collection of web utilities of questionable usefulness</i>
+                    |
+                    <a href="whatis.html">what is this?</a>
+                    |
+                    <a href="https://beepboop.systems">back to beepboop.systems</a>
+                    |
+                    <a href="https://github.com/stupidcomputer/tools.beepboop.systems">view source code</a>
+                </p>
+            </div>
 
-            <i>a collection of web-apps of questionable usefulness</i>
-
+            <h2>Generic utilities</h2>
             <ul>
-                <li><a href="presenter/">presentation timer</a></li>
-                <li><a href="flagvolunteers/">flag program volunteer calculator</a></li>
-                <li><a href="routecalculator/">flag program route calculator</a></li>
+                <li>
+                    <b><a href="presenter/">A simple presentation timer.</a></b>
+                    Shows only minutes with black-on-white text.
+                    Made for use with a projector or screen in the back of an auditorium.
+                </li>
             </ul>
+
+            <h2 id="flagutils">Flag program utilities</h2>
+            <p>
+                <i>For more marching band and most broadly music-related stuff, go to <a href="https://marching.beepboop.systems">marching.beepboop.systems</a>.</i>
+            </p>
+            <ul>
+                <li>
+                    <b><a href="flagvolunteers/">A flag program volunteer visualizer.</a></b>
+                    Shows volunteer coverage of flag holidays based on SignUpGenius output.
+                </li>
+                <li>
+                    <b><a href="routecalculator/">A flag program route generator.</a></b>
+                    Generates route sheets for flag distributors.
+                    Automagically calculates page breaks with HTML magic and allows some easy modification.
+                </li>
+            </ul>
+            
+            <p>The background image is a dithered version of "<a rel="noopener noreferrer" href="https://www.flickr.com/photos/80758054@N00/159018751">Electronics Workbench</a>" by <a rel="noopener noreferrer" href="https://www.flickr.com/photos/80758054@N00">jamesbastow</a>, which is licensed under the <a rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse">CC BY-SA 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;" /><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;" /><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="height: 1em; margin-right: 0.125em; display: inline;" /></a>.</p>
         </article>
     </body>
 </html>
