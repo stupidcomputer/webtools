@@ -1,0 +1,28 @@
+.dayslot {
+    position: relative;
+
+    height: 4em;
+    width: 100%;
+
+    border: 2px black dashed;
+    margin: 2px;
+}
+
+.datename {
+    font-size-adjust: from-font;
+    font-size: 150%;
+}
+
+.daystats {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+    width: 30%;
+    top: 0;
+    right: 0;
+
+    text-align: right;
+}
