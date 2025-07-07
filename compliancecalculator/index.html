@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flag Program Compliance Calculator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="initialsetup">
+            <div class="border-default" id="textareaarea">
+                <p>Copy paste CutTime information here:</p>
+                <div id="textareawidgetcontainer">
+                    <div class="textareawidget border-default">
+                        <p>Copy paste student info here:</p>
+                        <textarea id="studenttextarea" class="rich" cols="40" rows="8"></textarea>
+                    </div>
+                    <div class="textareawidget border-default">
+                        <p>Copy paste parent info here:</p>
+                        <textarea id="parenttextarea" class="rich" cols="40" rows="8"></textarea>
+                    </div>
+                </div>
+                <br>
+                <button id="generatefamilyinfo">Generate family information</button>
+            </div>
+            <div class="border-default" id="signupgeniusupload">
+                Upload the CSV file from the SignUpGenius reports:
+                <input type="file" id="signupgenius" />
+            </div>
+            <div class="border-default" id="statistics">
+                <b>Statistics:</b>
+                <button id="families_genstats">Generate statistics</button>
+                <button id="downloadcsv">Download csv with determinations</button>
+                <p>Number of families in compliance: <b><span id="families_incompliance"></span></b>
+                <p>Number of families total: <b><span id="families_total"></span></b>
+            </div>
+        </div>
+    </body>
+    <script src="./levenshtein.js"></script>
+    <script src="./main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+</html>

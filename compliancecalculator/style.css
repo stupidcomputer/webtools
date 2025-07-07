@@ -1,0 +1,32 @@
+#textareaarea {
+    padding: 5px;
+    width: fit-content;
+}
+
+#textareawidgetcontainer {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.textareawidget {
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+}
+
+#signupgeniusupload {
+    width: fit-content;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+#statistics {
+    width: fit-content;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.border-default {
+    border: 3px black solid;
+}
